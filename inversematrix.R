@@ -5,17 +5,28 @@
   ## The function can 
   ## 1. set the matrix
   ## 2. get the matrix
-  ## 3. set the inverse of the matrix
-  ## 4. get the inverse of the matrix
+  ## 3. set the inverse value of the matrix
+  ## 4. get the inverse value of the matrix
+
 makeCacheMatrix <- function(x = matrix) {
   inv <- NULL
+  
+  ## set the value of the matrix
   set <- function(y){
     x <<- y
     inv <<- NULL
   }
+  
+  ## get the value of the matrix
   get <- function() x
+  
+  ## set the inverse value of the matrix
   setInverse <- function(inverse) inv <<-inverse
+  
+  ## get the inverse value of the matrix
   getInverse <- function() inv
+  
+  ## return available functions
   list(set = set,
        get = get,
        setInverse = setInverse,
